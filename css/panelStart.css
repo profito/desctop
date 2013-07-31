@@ -1,0 +1,139 @@
+﻿#panelStart
+{
+    height:30px;
+    width:100%;
+    position: absolute;
+    bottom:0;
+    background:url('../images/bgStart.png');
+}
+
+#panelStart #buttonStart
+{
+    width:30px;
+    height:30px;
+    background:url('../images/bStart.png');
+    float:left;
+
+}
+
+#buttonStart:hover #menuStart
+{
+    margin:-253px 0 0 0;
+    width:240px;
+    height:220px;
+    border:2px solid #acacac;
+    background:url('../images/bgStart.png');
+    padding:50% 0;
+    border-top-right-radius:5px;
+    border-top-left-radius:5px;
+}
+#buttonStart:hover #musicIconPysk{
+    display:block;
+}
+
+#buttonStart:hover #textIconPysk{
+    display:block;
+}
+
+#buttonStart:hover #deleteIconPysk{
+     display:block;
+ }
+
+#buttonStart:hover #embmenuStart
+{
+    border-radius:5px;
+    width:150px;
+    height:220px;
+    border:2px solid #acacac;
+    background:#ffffff;
+}
+
+#buttonStart:hover
+{
+    background:url('../images/bcStart.png');
+}
+
+#panelStart #workStart
+{
+    float:left;
+}
+
+#panelStart #oclokStart
+{
+    width:7%;
+    height:100%;
+    float:right;
+}
+
+#workStart
+{
+    margin:0 0 0 10px;
+    width:500px;
+    height:30px;
+    float:left;
+
+}
+
+#buttonStart:hover #close
+{
+    background:url('../images/close2.png');
+    float:left;
+    width: 30px;
+    height:30px;
+    border:1px solid #acacac;
+    cursor:pointer;
+}
+#buttonStart:hover #replay
+{
+    background:url('../images/replay2.png');
+    float:left;
+    width: 30px;
+    height:30px;
+    margin:0 0 0 8px;
+    border:1px solid #acacac;
+    cursor:pointer;
+
+}
+#buttonStart:hover #control
+{
+    float:right;
+    width:80px;
+    height:38px;
+    margin:-34px 0 50px 50px;
+}
+
+#buttonStart:hover #user
+{
+    background:url('../images/user.png');
+    float:right;
+    width:35px;
+    height:35px;
+    margin:-222px 24px 50px 50px;
+    cursor:pointer;
+}
+
+
+
+.deepStart{
+    width:30px;
+    height:28px;
+    float:left;
+    margin:1px 3px 0 0;
+    background:url('../images/itunesIcon.png');
+
+}
+
+.bookStart{
+    width:30px;
+    height:28px;
+    float:left;
+    margin:1px 3px 0 0;
+    background:url('../images/textIcon.png');
+}
+.deleteStart{
+    width:30px;
+    height:28px;
+    float:left;
+    margin:1px 3px 0 0;
+    background:url('../images/deleteIcon.png');
+}

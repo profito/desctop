@@ -1,0 +1,95 @@
+#musicIconPysk{
+    width:140px;
+    height:30px;
+    margin:5px 0 0 5px;
+    display:none;
+}
+
+#textIconPysk{
+    width:140px;
+    height:30px;
+    margin:5px 0 0 5px;
+    display:none;
+}
+#deleteIconPysk{
+    width:140px;
+    height:30px;
+    margin:5px 0 0 5px;
+    display:none;
+}
+
+
+.imgMusicPysk{
+    width:30px;
+    height:28px;
+    background: url(../images/itunesIcon.png);
+    float:left;
+    margin:0px 7px 0px 3px;
+
+}
+.imgDeletePysk{
+    width:30px;
+    height:28px;
+    background: url(../images/deleteIcon.png);
+    float:left;
+    margin:0px 7px 0px 3px;
+
+}
+
+.imgTextPysk{
+    width:30px;
+    height:28px;
+    background: url(../images/textIcon.png);
+    float:left;
+    margin:0px 7px 0px 3px;
+}
+.Audio{
+    margin:5px 0 0 0px;
+    width:100px;
+    height:20px;
+    float:left;
+}
+
+.Text{
+    margin:5px 0 0 0px;
+    width:100px;
+    height:20px;
+    float:left;
+}
+.Delete{
+     margin:5px 0 0 0px;
+     width:100px;
+     height:20px;
+     float:left;
+ }
+
+#musicIconPysk:hover
+{
+    background: #d2d2d2;
+    cursor:pointer;
+    width:140px;
+    height:28px;
+    border-radius: 3px;
+    border:1px solid #c2c2c2;
+}
+
+#textIconPysk:hover
+{
+    background: #d2d2d2;
+    cursor:pointer;
+    width:140px;
+    height:28px;
+    border-radius: 3px;
+    border:1px solid #c2c2c2;
+}
+
+#deleteIconPysk:hover
+{
+    background: #d2d2d2;
+    cursor:pointer;
+    width:140px;
+    height:28px;
+    border-radius: 3px;
+    border:1px solid #c2c2c2;
+}
+

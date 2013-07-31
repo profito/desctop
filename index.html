@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html oncontextmenu="return false">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="css/desctop.css" />
+    <link rel="stylesheet" href="css/panelStart.css" />
+    <link rel="stylesheet" href="css/iconPysk.css" />
+    <link rel="stylesheet" href="css/windows.css" />
+    <title>windows</title>
+</head>
+<body >
+
+    <!--Меню пуск-->
+    <div id='panelStart'>
+        <div id='buttonStart'>
+            <div id='menuStart'>
+                <div id='embmenuStart'></div>
+                <div id='user'></div>
+                <div id='control'>
+                    <div id='close' onclick="window.close(true)">
+                    </div>
+                    <div id='replay' onclick="window.location.reload(true)"></div>
+                </div>
+            </div>
+        </div>
+        <div id='workStart'></div>
+        <div id='oclokStart'></div>
+    </div>
+    <div id="contextMenu" />
+    <ul>
+        <li>Обновить</li>
+        <li id="createElement">Создать
+            <ul id="elements">
+                <li>Текстовый файл</li>
+                <li>Папку</li>
+            </ul>
+        </li>
+        <li>Свойства</li>
+
+    </ul>
+    </div>
+
+
+
+    <!--Блок с иконками-->
+    <div id="wrapperIcon"></div>
+
+    <!--Блок с окнами-->
+    <div id="wrapperWindows"></div>
+
+    <!--Шаблон иконки на рабочем столе -->
+    <script type="text/html" id="icon" >
+        <div id="<%= id %>" onclick="<%= alert %>;">
+            <div class="<%= img %>"></div>
+            <div class="<%= itext %>"><%= itext %></div>
+        </div>
+    </script>
+
+    <!--Шаблон иконки в меню пуск -->
+    <script type="text/html" id="iconPysk">
+        <div id="<%= id %>" onclick="<%= alert %>;">
+            <div class="<%= img %>"></div>
+            <div class="<%= itext %>"><%= itext %></div>
+        </div>
+    </script>
+
+    <!--Шаблон иконки в страку пуск -->
+    <script type="text/html" id="iconStart">
+        <div id="<%= id %>" class="<%= className %>" <%= closes %> >
+        </div>
+    </script>
+
+    <!--Шаблон окна на рабочем столе-->
+    <script type="text/html" id="wind">
+        <div class="<%= id %><%= win %>" id="win<%= n %>" >
+            <div id="<%= winTop %>" ><%= nameWindows %></span>
+                <div class="<%= winButton %> <%= winClose %>" <%= closes %> >x</div>
+                <div class="<%= winButton %> <%= winMin %>" <%= min %> >_</div>
+            </div>
+            <div id="<%= winText %>">
+            <<%= textarea %> class="<%= embwinText %>" >
+            </<%= textarea %> >
+            </div>
+        </div>
+    </script>
+
+
+</body>
+<script src="js/rightClick.js"></script>
+<script src="js/icon.js"></script>
+<script src="js/core.js"></script>
+<script src="js/window.js"></script>
+<script src="js/start.js"></script>
+<script src="js/common.js"></script>
+
+
+</html>
+
+

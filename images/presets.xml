@@ -1,0 +1,203 @@
+<presets>
+ <facility name="lame">
+  <preset name="preset: standard">
+   <comment>
+      preset: standard
+      This preset should generally be transparent to most people on most music and is already quite high in quality.
+      The resulting bitrate should be in the 170-210kbps range, according to music complexity.
+   </comment>
+   <value name="presetVBR">1001</value>
+   <value name="lowpassFreq">0</value>
+   <value name="maxBitrateVBR">0</value>
+   <value name="hideLameSettings">1</value>
+  </preset>
+
+  <preset name="preset: standard + nogap">
+   <comment>
+      preset: standard + nogap
+      This preset is the same as the "preset: standard" one, except that it enables LAME nogap encoding. With this feature turned on, you can encode continuous-mix-CD's to mp3. When playing back the created mp3's (e.g. with Winamp + gapless output plugin), there will be no hearable clicks, pops or gaps.
+   </comment>
+   <value name="presetVBR">1001</value>
+   <value name="lowpassFreq">0</value>
+   <value name="maxBitrateVBR">0</value>
+   <value name="hideLameSettings">1</value>
+   <value name="noGap">1</value>
+  </preset>
+
+  <preset name="preset: fast standard">
+   <comment>
+      preset: fast standard
+      Enables the new fast VBR for the standard profile. The disadvantage to the speed switch is that often times the bitrate will be slightly higher than with the normal mode and quality may be slightly lower also.
+   </comment>
+   <value name="presetVBR">1004</value>
+   <value name="lowpassFreq">0</value>
+   <value name="maxBitrateVBR">0</value>
+   <value name="hideLameSettings">1</value>
+  </preset>
+
+  <preset name="preset: medium">
+   <comment>
+      preset: medium
+      This preset should provide near transparency to most people on most music.
+      The resulting bitrate should be in the 150-180kbps range, according to music complexity.
+   </comment>
+   <value name="presetVBR">1006</value>
+   <value name="lowpassFreq">0</value>
+   <value name="maxBitrateVBR">0</value>
+   <value name="hideLameSettings">1</value>
+  </preset>
+
+  <preset name="preset: fast medium">
+   <comment>
+      preset: fast medium
+      Enables the new fast VBR for the medium profile. The disadvantage to the speed switch is that often times the bitrate will be slightly higher than with the normal mode and quality may be slightly lower also.
+   </comment>
+   <value name="presetVBR">1007</value>
+   <value name="lowpassFreq">0</value>
+   <value name="maxBitrateVBR">0</value>
+   <value name="hideLameSettings">1</value>
+  </preset>
+
+  <preset name="preset: extreme">
+   <comment>
+      preset: extreme
+      If you have extremely good hearing and similar equipment, this preset will provide slightly higher quality than the "standard" mode.
+      The resulting bitrate should be in the 200-240kbps range, according to music complexity.
+   </comment>
+   <value name="presetVBR">1002</value>
+   <value name="lowpassFreq">0</value>
+   <value name="maxBitrateVBR">0</value>
+   <value name="hideLameSettings">1</value>
+  </preset>
+
+  <preset name="preset: fast extreme">
+   <comment>
+      preset: fast extreme
+      Enables the new fast VBR for the extreme profile. The disadvantage to the speed switch is that often times the bitrate will be slightly higher than with the normal mode and quality may be slightly lower also.
+   </comment>
+   <value name="presetVBR">1005</value>
+   <value name="lowpassFreq">0</value>
+   <value name="maxBitrateVBR">0</value>
+   <value name="hideLameSettings">1</value>
+  </preset>
+
+  <preset name="preset: insane">
+   <comment>
+      preset: insane
+      This preset will usually be overkill for most people and most situations, but if you must have the absolute highest quality with no regard to filesize, this is the way to go.
+      The resulting bitrate will be ABR 320kbps.
+   </comment>
+   <value name="presetVBR">1003</value>
+   <value name="lowpassFreq">0</value>
+   <value name="maxBitrateVBR">0</value>
+   <value name="hideLameSettings">1</value>
+  </preset>
+
+  <preset name="preset: ABR 128">
+   <comment>
+      preset: ABR 128
+      Using this preset will usually give you good quality at a specified average bitrate. Depending on the bitrate, this preset will determine the optimal settings for that particular situation.
+      While this approach works, it is not nearly as flexible as VBR, and usually will not attain the same level of quality as VBR at higher bitrates.
+   </comment>
+   <value name="presetABR">128</value>
+   <value name="lowpassFreq">0</value>
+   <value name="VBRquality">4</value>
+   <value name="hideLameSettings">1</value>
+  </preset>
+
+  <preset name="preset: CBR 128">
+   <comment>
+      preset: CBR 128
+      Using this preset will usually give you good quality at a specified constant bitrate.
+      Note that the ABR mode does provide higher quality but CBR may be useful in situations such as when streaming an mp3 over the internet may be important.
+   </comment>
+   <value name="presetCBR">128</value>
+   <value name="lowpassFreq">0</value>
+   <value name="hideLameSettings">1</value>
+  </preset>
+
+  <preset name="preset: V5">
+   <comment>
+      VBR quality 5 (average 128 Kbps)
+   </comment>
+   <value name="presetVBR">450</value>
+   <value name="VBRmethod">0</value>
+   <value name="VBRquality">5</value>
+   <value name="lowpassFreq">0</value>
+   <value name="bitrateMode">2</value>
+   <value name="minBitrateVBR">0</value>
+   <value name="maxBitrateVBR">0</value>
+   <value name="hideLameSettings">1</value>
+  </preset>
+		
+  <preset name="preset: V5 (fast)">
+   <comment>
+      VBR quality 5 (average 128 Kbps) using fast VBR mode
+   </comment>
+   <value name="presetVBR">450</value>
+   <value name="VBRmethod">1</value>
+   <value name="VBRquality">5</value>
+   <value name="lowpassFreq">0</value>
+   <value name="bitrateMode">2</value>
+   <value name="minBitrateVBR">0</value>
+   <value name="maxBitrateVBR">0</value>
+   <value name="hideLameSettings">1</value>
+  </preset>
+
+  <preset name="preset: V7">
+   <comment>
+      VBR quality 7 (average 96 Kbps)
+      Resampling to 32000 Hz, ready for portable usage
+   </comment>
+   <value name="presetVBR">430</value>
+   <value name="VBRmethod">0</value>
+   <value name="VBRquality">7</value>
+   <value name="lowpassFreq">0</value>
+   <value name="bitrateMode">2</value>
+   <value name="minBitrateVBR">0</value>
+   <value name="maxBitrateVBR">0</value>
+   <value name="hideLameSettings">1</value>
+  </preset>
+
+  <preset name="preset: V7 (fast)">
+   <comment>
+      VBR quality 7 (average 96 Kbps) using fasr VBR mode
+      Resampling to 32000 Hz, ready for portable usage
+   </comment>
+   <value name="presetVBR">430</value>
+   <value name="VBRmethod">1</value>
+   <value name="VBRquality">7</value>
+   <value name="lowpassFreq">0</value>
+   <value name="bitrateMode">2</value>
+   <value name="minBitrateVBR">0</value>
+   <value name="maxBitrateVBR">0</value>
+   <value name="hideLameSettings">1</value>
+  </preset>
+
+  <preset name="winLAME: portable player">
+   <comment>
+      winLAME: portable player
+      This preset is designed for portable players. It keeps the bitrate of the produced file at an average of 96 kbps, never exceeding a maximum bitrate of 256 kbps.
+      It is based on the "preset: ABR 128" preset
+   </comment>
+   <value name="presetABR">96</value>
+   <value name="VBRquality">4</value>
+   <value name="sampleRate">32000</value>
+   <value name="bitrateABRmax">256</value>
+   <value name="quality">2</value>
+   <value name="hideLameSettings">1</value>
+  </preset>
+
+  <preset name="winLAME: WAV Audio for VirtualDub, CBR 128 kbps">
+   <comment>
+      winLAME: VirtualDub audio mp3 compression, CBR 128 kbps
+      This preset can be used to compress audio streams to mp3, in e.g. VirtualDub. A RIFF WAVE Header is prepended to the mp3 data, and the file extension will be ".wav".
+      It is based on the "preset: CBR 128" preset
+   </comment>
+   <value name="presetCBR">128</value>
+   <value name="lowpassFreq">0</value>
+   <value name="hideLameSettings">1</value>
+   <value name="writeWaveHeader">1</value>
+  </preset>
+ </facility>
+</presets>
