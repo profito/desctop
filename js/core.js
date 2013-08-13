@@ -3,10 +3,10 @@ function Publisher() {
     this.subscribers = [];
 }
 
-Publisher.prototype.deliver = function(data) {
+Publisher.prototype.deliver = function(type,name) {
     this.subscribers.forEach(
         function(fn) {
-            fn(data);
+            fn(type,name);
         }
     );
     return this;
@@ -20,43 +20,61 @@ Function.prototype.subscribe = function(publisher) {
 <!-- -->
 ///////////
 ///////////
-var openWindows = new Publisher,
-    newIcons = new Publisher,
+var openWindows  = new Publisher,
+    newIcons     = new Publisher,
     closeWindows = new Publisher,
-    closeIcons = new Publisher,
-    minWindows = new Publisher,
-    maxWindows = new Publisher,
-    e="'",
+    closeIcons   = new Publisher,
+    minWindows   = new Publisher,
+    maxWindows   = new Publisher,
     i,
-    zIndex=0;
+    zIndex= 0,deepStatus=0;
 
-var openWind = function(name) {
-    (name=='book')?  text='textarea':  text='div';
-    document.getElementById('wrapperWindows').innerHTML += tmpl('wind')({id:name, textarea: text , nameWindows:name, win:'win', n:i++, winTop:'winTop', winText:'winText', winButton:'winButton',winMin:'winMin', min:'onclick="minWindows.deliver('+e+(i-1)+e+')"', winClose:'winClose', closes:'onclick="closeWindows.deliver('+e+(i-1)+e+')'+'; closeIcons.deliver('+e+(i)+e+');"', embwinText:'embwinText' });
 
+var openWind = function(name,iname) {
+    if(name=='deep'){
+        arrayWrite("",iname);
+        if(deepStatus==0){
+            deepStatus=1;
+        document.getElementById('wrapperWindows').innerHTML += tmpl('windMusic')({id:name, textarea:'div', nameWindows: iname, n:i++, min:'onclick="minWindows.deliver(\''+name+'\',\''+(i-1)+'\')"', closes:'onclick="closeWindows.deliver(\''+name+'\',\''+(i-1)+'\') ; closeIcons.deliver(\''+(i)+'\');"' });
+       }
+    }else{
+    (name=='book')? text='textarea' : text='div';
+    document.getElementById('wrapperWindows').innerHTML += tmpl('wind')({id:name, textarea:text, nameWindows: iname, n:i++, min:'onclick="minWindows.deliver(\''+(i-1)+'\')"', closes:'onclick="closeWindows.deliver(\''+name+'\',\''+(i-1)+'\') ; closeIcons.deliver(\''+(i-1)+'\');"' });
+    }
 };
 
 var newIcon = function(name) {
-    document.getElementById('workStart').innerHTML += tmpl('iconStart')({id:i+'icon', className:name+'Start', closes:'onclick="maxWindows.deliver('+e+(i-1)+e+')"' });
-
+    if(name=='deep'){
+        if(deepStatus==1){
+            deepStatus=2;
+            document.getElementById('workStart').innerHTML += tmpl('iconPanelStart')({id:i+'icon', className:name+'Start', maximizeWindows:'onclick="maxWindows.deliver(\''+(i-1)+'\')"' });
+        }
+    }else{
+        document.getElementById('workStart').innerHTML += tmpl('iconPanelStart')({id:i+'icon', className:name+'Start', maximizeWindows:'onclick="maxWindows.deliver(\''+(i-1)+'\')"' });
+    }
 };
 
-var closeWind = function(name) {
+var closeWind = function(type,name) {
     document.getElementById('wrapperWindows').removeChild(document.getElementById('win'+name));
+    if(type=='deep'){
+        document.getElementById("trackList").className='closeTrackList';
+        song.pause();
+        deepStatus='0';
+    }
 };
 
 var closeIcon = function(name) {
     document.getElementById('workStart').removeChild(document.getElementById(name+'icon'));
 };
-
-var minWind = function(name) {
+var minWind = function(type,name) {
     document.getElementById('win'+name).style.display='none';
+    (type=='deep')?document.getElementById("trackList").className='closeTrackList':"";
 };
 
 var maxWind = function(name) {
+    console.log(" "+name);
     document.getElementById('win'+name).style.display='block';
     document.getElementById('win'+name).style.zIndex=zIndex++;
-    ;
 };
 
 newIcon.subscribe(newIcons);
@@ -69,13 +87,17 @@ maxWind.subscribe(maxWindows);
 ///////////
 
 var OS,
-    startOS;
-
+    startOS,
+    musicArray= new Array(),
+    q=0;
 startOS = {
     renderAll: function(){
         var a;
         for (a in this.OSSettings) {
             new OS(this.OSSettings[a]);
+            if(this.OSSettings[a].url!=undefined){
+                musicArray[q++]=this.OSSettings[a].url;
+            }
         }
     }
 };

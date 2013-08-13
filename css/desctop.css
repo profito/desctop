@@ -2,66 +2,67 @@
 {
     margin:0 0 0 0;
 }
+
 body
 {
     background: url('../images/bg.jpg');
     background-size: cover;
 
 }
-#musicIcon{
+
+.iconDesctop
+{
     width:64px;
     height:84px;
     margin:10px 0 0 10px;
     cursor: pointer;
 }
 
-#textIcon{
-    width:64px;
-    height:84px;
-    margin:10px 0 0 10px;
-    cursor: pointer;
-
-}
-#deleteIcon{
-    width:64px;
-    height:84px;
-    margin:10px 0 0 10px;
-    cursor: pointer;
-    position: absolute;
-    bottom: 40px;
-    right:10px;
-
-}
-
-
-.imgMusic{
+.img
+{
     width:64px;
     height:64px;
+}
+
+.imgDelete
+{
+    background: url(../images/TrashIcon.png);
+}
+
+.text
+{
+    text-align:center;
+    width:64px;
+    height:20px;
+    color:white;
+}
+
+#tools
+{
+    width:400px;
+    height:300px;
+    background: white;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin:-150px 0 0 -200px;
+    border-radius: 7px;
+    border: 1px solid black;
+    display: none;
+}
+
+#labels
+{
+    padding:20px;
+}
+
+/*Иконки на рабочем столе*/
+.imgMusic
+{
     background: url(../images/music.png);
 }
 
-.imgText{
-    width:64px;
-    height:64px;
+.imgText
+{
     background: url(../images/text.png);
-}
-.imgDelete
-{
-    width:64px;
-    height:64px;
-    background: url(../images/TrashIcon.png);
-
-}
-.music
-{
-    text-align:center;
-    width:64px;
-    height:20px;
-    color:white;
-}
-.text{
-    text-align:center;
-    width:64px;
-    height:20px;
-    color:white;
 }

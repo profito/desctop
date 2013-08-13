@@ -13,7 +13,6 @@
     height:30px;
     background:url('../images/bStart.png');
     float:left;
-
 }
 
 #buttonStart:hover #menuStart
@@ -22,22 +21,16 @@
     width:240px;
     height:220px;
     border:2px solid #acacac;
-    background:url('../images/bgStart.png');
+    background:url('../images/bgUniversal.png');
     padding:50% 0;
     border-top-right-radius:5px;
     border-top-left-radius:5px;
 }
-#buttonStart:hover #musicIconPysk{
+
+#buttonStart:hover .iconMenuStart
+{
     display:block;
 }
-
-#buttonStart:hover #textIconPysk{
-    display:block;
-}
-
-#buttonStart:hover #deleteIconPysk{
-     display:block;
- }
 
 #buttonStart:hover #embmenuStart
 {
@@ -50,7 +43,7 @@
 
 #buttonStart:hover
 {
-    background:url('../images/bcStart.png');
+    background:url('../images/bcStart.png')!important;
 }
 
 #panelStart #workStart
@@ -83,6 +76,7 @@
     border:1px solid #acacac;
     cursor:pointer;
 }
+
 #buttonStart:hover #replay
 {
     background:url('../images/replay2.png');
@@ -92,8 +86,8 @@
     margin:0 0 0 8px;
     border:1px solid #acacac;
     cursor:pointer;
-
 }
+
 #buttonStart:hover #control
 {
     float:right;
@@ -112,28 +106,34 @@
     cursor:pointer;
 }
 
-
-
-.deepStart{
+.iconPanelStart{
     width:30px;
     height:28px;
     float:left;
     margin:1px 3px 0 0;
-    background:url('../images/itunesIcon.png');
+}
 
+
+/*Иконки в понели задач */
+
+.deleteStart{
+    background:url('../images/deleteIcon.png');
+}
+
+.deepStart{
+    background:url('../images/itunesIcon.png');
 }
 
 .bookStart{
-    width:30px;
-    height:28px;
-    float:left;
-    margin:1px 3px 0 0;
     background:url('../images/textIcon.png');
 }
-.deleteStart{
-    width:30px;
-    height:28px;
-    float:left;
-    margin:1px 3px 0 0;
-    background:url('../images/deleteIcon.png');
+
+/*время*/
+
+#oclokStart{
+    border-left:2px solid #828282;
+    color:#ffffff;
+    font-family: arial;
+    font-size: 12px;
+    text-align: center;
 }

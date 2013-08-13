@@ -1,49 +1,50 @@
 startOS.OSSettings = {
     music: {
         name:'deep',
-        type:'musicIcon',
-        itext:'music',
+        iname:'Плеер',
         img:'imgMusic',
         imgicon:'imgIconMusic',
-        callback: "openDeep()",
-        windowOpt: {
-            name: 'Now Playing: Deep Purple - Smoke on the water',
-            type: 'Audio',
-            width: 300,
-            height: 200,
-            state: 'open'
-        }
+        type:'Pleer',
+        url:"__"
 
+    },
+    Deep_Purple: {
+        name:'deep',
+        iname:'D.Purple',
+        img:'imgMusic',
+        url:'music/dp.ogg_Deep Purple - Smoke on the water',
+        imgicon:'imgIconMusic',
+        type:'sound'
+    },
+
+    kasta: {
+        name:'deep',
+        iname:'Каста',
+        img:'imgMusic',
+        url:'music/kasta.ogg_Kasta',
+        imgicon:'imgIconMusic',
+        type:'sound'
     },
     text: {
         name: 'book',
-        type: 'textIcon',
-        itext:'text',
+        iname: 'Блокнот',
         img:'imgText',
         imgicon:'imgIconText',
-        callback: "openBook()",
+        value:'',
         windowOpt: {
-            name: 'ololo.txt',
-            type: 'Text',
-            width: 300,
-            height: 200,
-            state: 'open'
-        }
+            name: 'ololo.txt'
+        },
+        type:'Book'
     },
     delete: {
         name: 'delete',
-        type: 'deleteIcon',
-        itext:'Корзина',
+        iname:'Корзина',
         img:'imgDelete',
         imgicon:'imgIconDelete',
-        callback: "openBook()",
         windowOpt: {
-        name: 'Delete',
-            type: 'Delete',
-            width: 300,
-            height: 200,
-            state: 'open'
-        }
+           name: 'Delete'
+        },
+        type:'delete'
     }
 };
 startOS.renderAll();

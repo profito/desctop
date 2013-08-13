@@ -1,6 +1,5 @@
 var Icon,
     IconManager,
-    i= 3,
     z=0,x=0;
 
 Icon = function(obj){
@@ -13,9 +12,14 @@ Icon = function(obj){
 };
 Icon.prototype= {
     newIcon: function(obj){
-        var e="'";
-        document.getElementById('wrapperIcon').innerHTML += tmpl('icon')({id:obj.type, img:obj.img, itext:obj.itext, alert:'openWindows.deliver('+e+obj.name+e+')'+'; newIcons.deliver('+e+obj.name+e+');' });
-        document.getElementById('embmenuStart').innerHTML += tmpl('iconPysk')({id:obj.type+'Pysk', img:obj.img+'Pysk', itext:obj.windowOpt.type, alert:'openWindows.deliver('+e+obj.name+e+')'+'; newIcons.deliver('+e+obj.name+e+');'  });
+        if(obj.name=='deep'){
+        document.getElementById('wrapperIcon').innerHTML += tmpl('icon')({type:obj.type, img:obj.img, itext:obj.itext, iname: obj.iname, alert:'openWindows.deliver(\''+obj.name+'\',\''+obj.url+'\')'+'; newIcons.deliver(\''+obj.name+'\');' })
+        document.getElementById('embmenuStart').innerHTML += tmpl('iconMenuStart')({img:obj.img+'Start', itext:obj.iname, alert:'openWindows.deliver(\''+obj.name+'\',\''+obj.url+'\'); newIcons.deliver(\''+obj.name+'\')'  });
+        }
+        else{
+            document.getElementById('wrapperIcon').innerHTML += tmpl('icon')({type:obj.type, img:obj.img, itext:obj.itext, iname: obj.iname, alert:'openWindows.deliver(\''+obj.name+'\',\''+obj.iname+'\')'+'; newIcons.deliver(\''+obj.name+'\');' });
+            document.getElementById('embmenuStart').innerHTML += tmpl('iconMenuStart')({img:obj.img+'Start', itext:obj.iname, alert:'openWindows.deliver(\''+obj.name+'\',\''+obj.iname+'\'); newIcons.deliver(\''+obj.name+'\')'  });
+        }
     }
 };
 

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html oncontextmenu="return false">
+<html  oncontextmenu="return false">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="css/desctop.css" />
     <link rel="stylesheet" href="css/panelStart.css" />
-    <link rel="stylesheet" href="css/iconPysk.css" />
+    <link rel="stylesheet" href="css/iconStart.css" />
     <link rel="stylesheet" href="css/windows.css" />
     <title>windows</title>
 </head>
@@ -16,7 +16,7 @@
         <div id='buttonStart'>
             <div id='menuStart'>
                 <div id='embmenuStart'></div>
-                <div id='user'></div>
+                <div id='user' onclick="document.getElementById('tools').style.display='block';"></div>
                 <div id='control'>
                     <div id='close' onclick="window.close(true)">
                     </div>
@@ -25,23 +25,25 @@
             </div>
         </div>
         <div id='workStart'></div>
-        <div id='oclokStart'></div>
+        <div id='oclokStart'>
+            <div id='timeStart'></div>
+            <div id='dateStart'></div>
+        </div>
     </div>
+
+    <!--Контекстное меню на рабочем столе-->
     <div id="contextMenu" />
-    <ul>
-        <li>Обновить</li>
-        <li id="createElement">Создать
-            <ul id="elements">
-                <li>Текстовый файл</li>
-                <li>Папку</li>
-            </ul>
-        </li>
-        <li>Свойства</li>
-
-    </ul>
+       <ul>
+           <li id="update">Обновить</li>
+           <li id="createElement">Создать
+               <ul id="elements">
+                   <li id='textFileCreate'>Текстовый файл</li>
+                   <li id='createArray'>Папку</li>
+               </ul>
+           </li>
+           <li id="allTools">Свойства</li>
+       </ul>
     </div>
-
-
 
     <!--Блок с иконками-->
     <div id="wrapperIcon"></div>
@@ -51,48 +53,87 @@
 
     <!--Шаблон иконки на рабочем столе -->
     <script type="text/html" id="icon" >
-        <div id="<%= id %>" onclick="<%= alert %>;">
-            <div class="<%= img %>"></div>
-            <div class="<%= itext %>"><%= itext %></div>
+        <div class="iconDesctop"  onclick="<%= alert %>;">
+            <div id="<%= type %>" class="img <%= img %>"></div>
+            <div id="<%= type %>" class="text"><%= iname %></div>
         </div>
     </script>
 
     <!--Шаблон иконки в меню пуск -->
-    <script type="text/html" id="iconPysk">
-        <div id="<%= id %>" onclick="<%= alert %>;">
-            <div class="<%= img %>"></div>
-            <div class="<%= itext %>"><%= itext %></div>
+    <script type="text/html" id="iconMenuStart">
+        <div class="iconMenuStart"  onclick="<%= alert %>;">
+            <div class="imgStart <%= img %>"></div>
+            <div class="nameIconMenuStart"><%= itext %></div>
         </div>
     </script>
 
     <!--Шаблон иконки в страку пуск -->
-    <script type="text/html" id="iconStart">
-        <div id="<%= id %>" class="<%= className %>" <%= closes %> >
+    <script type="text/html" id="iconPanelStart">
+        <div id="<%= id %>" class="iconPanelStart <%= className %>" <%= maximizeWindows %> >
         </div>
     </script>
 
     <!--Шаблон окна на рабочем столе-->
     <script type="text/html" id="wind">
-        <div class="<%= id %><%= win %>" id="win<%= n %>" >
-            <div id="<%= winTop %>" ><%= nameWindows %></span>
-                <div class="<%= winButton %> <%= winClose %>" <%= closes %> >x</div>
-                <div class="<%= winButton %> <%= winMin %>" <%= min %> >_</div>
+        <div class="<%= id %> win" id="win<%= n %>" >
+            <div id="winTop" ><%= nameWindows %>
+                <div class="winButton winClose" <%= closes %> >x</div>
+                <div class="winButton winMin" <%= min %> > _ </div>
             </div>
-            <div id="<%= winText %>">
-            <<%= textarea %> class="<%= embwinText %>" >
+            <div id="winText">
+            <<%= textarea %> class="embwinText" >
             </<%= textarea %> >
             </div>
         </div>
     </script>
+
+    <!--Шаблон окна проигрывателя на рабочем столе-->
+    <script type="text/html" id="windMusic">
+        <div class="<%= id %> " id="win<%= n %>" >
+            <div  id="panelMusic">
+                <div class="buttonMusic" id="buttonPlay"></div>
+                <div class="musicButton" id="musicButtonClose" <%= closes %>></div>
+                <div class="musicButton" id="musicButtonMin" <%= min %>></div>
+                <div class="musicButton" id="musicButtonList"></div>
+                <div class="musicButton" id="musicButtonReset" onclick="stopSong();"></div>
+                <div id="musicButtonRight"></div>
+                <div id="musicButtonPlay" onclick="playSong();"></div>
+                <div id="musicButtonLeft"></div>
+                <div id="musicButtonVolue"></div>
+            </div>
+        </div>
+    </script>
+    <!--Трек лист-->
+    <div id="trackList" class="closeTrackList">
+        <ul id="track">
+            <li>er</li>
+        </ul>
+    </div>
+
+
+    <!--Окно свойство-->
+    <div id="tools">
+        <div id="winTop">
+            Свойства
+            <div class="winButton winClose" id="toolClose">x</div>
+        </div>
+        <div id="labels">
+           <label class="nameLabel"> Название Браузера:</label> <label id="appName"></label><p>
+           <label class="nameLabel"> Версия Браузера:</label> <label id="appVersion"></label><p>
+           <label class="nameLabel"> Доступны ли cooki-файлы:</label> <label id="cookie"></label><p>
+           <label class="nameLabel"> Тип рабочей машины:</label> <label id="platform"></label><p>
+        </div>
+    </div>
 
 
 </body>
 <script src="js/rightClick.js"></script>
 <script src="js/icon.js"></script>
 <script src="js/core.js"></script>
-<script src="js/window.js"></script>
 <script src="js/start.js"></script>
 <script src="js/common.js"></script>
+<script src="js/window.js"></script>
+
 
 
 </html>

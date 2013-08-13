@@ -1,0 +1,57 @@
+.imgStart{
+    width:30px;
+    height:28px;
+    float:left;
+    margin:0 7px 0 3px;
+}
+
+.nameIconMenuStart
+{
+    margin:5px 0 0 0;
+    width:100px;
+    height:20px;
+    float:left;
+}
+
+.iconMenuStart:hover
+{
+    background: #d2d2d2;
+    cursor:pointer;
+    width:140px;
+    height:30px;
+    border-radius: 3px;
+    border:1px solid #c2c2c2;
+}
+
+.iconMenuStart
+{
+    width:140px;
+    height:30px;
+    margin:5px 0 0 5px;
+    border:1px solid white;
+    display:none;
+}
+
+#close:hover{
+    background: url('../images/closeHover.png') !important;
+}
+
+#replay:hover{
+    background: url('../images/replayHover.png') !important;
+}
+
+/*Иконки в меню пуск*/
+.imgDeleteStart
+{
+    background: url(../images/deleteIcon.png);
+}
+
+.imgTextStart
+{
+    background: url(../images/textIcon.png);
+}
+
+.imgMusicStart
+{
+    background: url(../images/itunesIcon.png);
+}
