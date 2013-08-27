@@ -2,7 +2,7 @@ startOS.OSSettings = {
     music: {
         name:'deep',
         iname:'Плеер',
-        img:'imgMusic',
+        img:'imgPleir',
         imgicon:'imgIconMusic',
         type:'Pleer',
         url:"__"
@@ -16,7 +16,6 @@ startOS.OSSettings = {
         imgicon:'imgIconMusic',
         type:'sound'
     },
-
     kasta: {
         name:'deep',
         iname:'Каста',

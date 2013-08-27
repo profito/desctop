@@ -49,10 +49,15 @@ function clicks(e){
         (openList=="closeTrackList")? document.getElementById("trackList").className='openTrackList':document.getElementById("trackList").className='closeTrackList';
     }
 
-    <!--выводим проигрываемый трек в конец и удоляям его из списка выше-->
-    if((e.target.className=="treckOfList")){
+    <!--выводим проигрываемый трек в конец и удоляем его из списка выше-->
+    if(e.target.className=="treckOfList"){
         arrayWrite(e,"");
     }
+    if(e.target.id=="NextDesctop")
+    {
+        nextDesctop(e.target.className);
+    }
+
 }
 
 function arrayWrite(e,urlS){
@@ -69,4 +74,17 @@ function arrayWrite(e,urlS){
     playSong(song);
 }
 
+function nextDesctop(img){
+    if(img=="img1"){
+    document.body.style.background="url('../desctop/images/bg2.jpg')";
+    document.body.style.backgroundSize='cover';
+    document.getElementById('NextDesctop').className="img2";
+    }
+    else
+    {
+        document.body.style.background="url('../desctop/images/bg1.jpg')";
+        document.body.style.backgroundSize='cover';
+        document.getElementById('NextDesctop').className="img1";
 
+    }
+}
